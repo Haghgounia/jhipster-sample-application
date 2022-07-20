@@ -1,0 +1,142 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-county-heading"
+        data-cy="CountyCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCounty.home.createOrEditLabel"
+      >
+        Create or edit a County
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCounty.countyId"
+            for="field_countyId"
+            >County Id</label
+          >
+          <input type="number" class="form-control" name="countyId" id="field_countyId" data-cy="countyId" formControlName="countyId" />
+          <div *ngIf="editForm.get('countyId')!.invalid && (editForm.get('countyId')!.dirty || editForm.get('countyId')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('countyId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('countyId')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCounty.countyCode"
+            for="field_countyCode"
+            >County Code</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="countyCode"
+            id="field_countyCode"
+            data-cy="countyCode"
+            formControlName="countyCode"
+          />
+          <div *ngIf="editForm.get('countyCode')!.invalid && (editForm.get('countyCode')!.dirty || editForm.get('countyCode')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('countyCode')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCounty.countyName"
+            for="field_countyName"
+            >County Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="countyName"
+            id="field_countyName"
+            data-cy="countyName"
+            formControlName="countyName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCounty.countyEnglishName"
+            for="field_countyEnglishName"
+            >County English Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="countyEnglishName"
+            id="field_countyEnglishName"
+            data-cy="countyEnglishName"
+            formControlName="countyEnglishName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCounty.province"
+            for="field_province"
+            >Province</label
+          >
+          <select class="form-control" id="field_province" data-cy="province" name="province" formControlName="province">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="provinceOption.id === editForm.get('province')!.value?.id ? editForm.get('province')!.value : provinceOption"
+              *ngFor="let provinceOption of provincesSharedCollection; trackBy: trackProvinceById"
+            >
+              {{ provinceOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

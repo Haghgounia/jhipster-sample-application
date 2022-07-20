@@ -1,0 +1,35 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "jhipsterSampleApplicationCurrency": {
+      "home": {
+        "title": "Currencies",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Currency",
+        "createOrEditLabel": "Create or edit a Currency",
+        "notFound": "No Currencies found"
+      },
+      "created": "A new Currency is created with identifier {{ param }}",
+      "updated": "A Currency is updated with identifier {{ param }}",
+      "deleted": "A Currency is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Currency {{ id }}?"
+      },
+      "detail": {
+        "title": "Currency"
+      },
+      "id": "ID",
+      "currencyId": "Currency Id",
+      "currencyAlphabeticIso": "Currency Alphabetic Iso",
+      "currencyNumericIso": "Currency Numeric Iso",
+      "currencyName": "Currency Name",
+      "currencyEnglishName": "Currency English Name",
+      "currencySymbol": "Currency Symbol",
+      "floatingPoint": "Floating Point",
+      "isBaseCurrency": "Is Base Currency",
+      "isDefaultCurrency": "Is Default Currency",
+      "conversionMethod": "Conversion Method",
+      "isActive": "Is Active",
+      "sortOrder": "Sort Order"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "jhipsterSampleApplicationContinent": {
+      "home": {
+        "title": "Continents",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Continent",
+        "createOrEditLabel": "Create or edit a Continent",
+        "notFound": "No Continents found"
+      },
+      "created": "A new Continent is created with identifier {{ param }}",
+      "updated": "A Continent is updated with identifier {{ param }}",
+      "deleted": "A Continent is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Continent {{ id }}?"
+      },
+      "detail": {
+        "title": "Continent"
+      },
+      "id": "ID",
+      "continentId": "Continent Id",
+      "continentCode": "Continent Code",
+      "continentName": "Continent Name",
+      "continentEnglishName": "Continent English Name"
+    }
+  }
+}

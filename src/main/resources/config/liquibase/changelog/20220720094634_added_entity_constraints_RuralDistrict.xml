@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity RuralDistrict.
+    -->
+    <changeSet id="20220720094634-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="district_id"
+                                 baseTableName="rural_district"
+                                 constraintName="fk_rural_distr__district_d5_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="district"/>
+    </changeSet>
+</databaseChangeLog>

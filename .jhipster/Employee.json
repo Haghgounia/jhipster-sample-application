@@ -1,0 +1,55 @@
+{
+  "applications": "*",
+  "changelogDate": "20220720094640",
+  "clientRootFolder": "jhipsterSampleApplication",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "employee",
+  "fields": [
+    {
+      "fieldName": "employeeId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "maritalStatus",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "birthDate",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "hireDate",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "employmentStatus",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "managerId",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "jhipsterSampleApplication",
+  "name": "Employee",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}
