@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "changelogDate": "20220720092624",
+  "clientRootFolder": "jhipsterSampleApplication",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "asset_assign",
+  "fields": [
+    {
+      "fieldName": "assetId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "employeeId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "assignDate",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "returnDate",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "jhipsterSampleApplication",
+  "name": "AssetAssign",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

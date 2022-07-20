@@ -1,0 +1,28 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "jhipsterSampleApplicationRuralDistrict": {
+      "home": {
+        "title": "Rural Districts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Rural District",
+        "createOrEditLabel": "Create or edit a Rural District",
+        "notFound": "No Rural Districts found"
+      },
+      "created": "A new Rural District is created with identifier {{ param }}",
+      "updated": "A Rural District is updated with identifier {{ param }}",
+      "deleted": "A Rural District is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Rural District {{ id }}?"
+      },
+      "detail": {
+        "title": "Rural District"
+      },
+      "id": "ID",
+      "ruralDistrictId": "Rural District Id",
+      "ruralDistrictCode": "Rural District Code",
+      "ruralDistrictName": "Rural District Name",
+      "ruralDistrictEnglishName": "Rural District English Name",
+      "district": "District"
+    }
+  }
+}

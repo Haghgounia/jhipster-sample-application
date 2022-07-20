@@ -79,6 +79,24 @@ public class CacheConfiguration {
     @Bean
     public JCacheManagerCustomizer cacheManagerCustomizer(javax.cache.configuration.Configuration<Object, Object> jcacheConfiguration) {
         return cm -> {
+            createCache(cm, com.mycompany.myapp.domain.Continent.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Country.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Currency.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Language.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Province.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.County.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.District.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.City.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.RuralDistrict.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Village.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.AssetCategory.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.AssetStatus.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Asset.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.AssetAssign.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Employee.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.EmployeeContact.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.JobOpening.class.getName(), jcacheConfiguration);
+            createCache(cm, com.mycompany.myapp.domain.Candidate.class.getName(), jcacheConfiguration);
             // jhipster-needle-redis-add-entry
         };
     }

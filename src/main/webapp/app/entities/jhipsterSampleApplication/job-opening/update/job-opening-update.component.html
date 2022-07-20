@@ -1,0 +1,150 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-job-opening-heading"
+        data-cy="JobOpeningCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationJobOpening.home.createOrEditLabel"
+      >
+        Create or edit a Job Opening
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationJobOpening.postingTitle"
+            for="field_postingTitle"
+            >Posting Title</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="postingTitle"
+            id="field_postingTitle"
+            data-cy="postingTitle"
+            formControlName="postingTitle"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationJobOpening.jobStatus"
+            for="field_jobStatus"
+            >Job Status</label
+          >
+          <input type="number" class="form-control" name="jobStatus" id="field_jobStatus" data-cy="jobStatus" formControlName="jobStatus" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationJobOpening.hiringLead"
+            for="field_hiringLead"
+            >Hiring Lead</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="hiringLead"
+            id="field_hiringLead"
+            data-cy="hiringLead"
+            formControlName="hiringLead"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationJobOpening.departmentId"
+            for="field_departmentId"
+            >Department Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="departmentId"
+            id="field_departmentId"
+            data-cy="departmentId"
+            formControlName="departmentId"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationJobOpening.employmentType"
+            for="field_employmentType"
+            >Employment Type</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="employmentType"
+            id="field_employmentType"
+            data-cy="employmentType"
+            formControlName="employmentType"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationJobOpening.minimumExperience"
+            for="field_minimumExperience"
+            >Minimum Experience</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="minimumExperience"
+            id="field_minimumExperience"
+            data-cy="minimumExperience"
+            formControlName="minimumExperience"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationJobOpening.jobDescription"
+            for="field_jobDescription"
+            >Job Description</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="jobDescription"
+            id="field_jobDescription"
+            data-cy="jobDescription"
+            formControlName="jobDescription"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

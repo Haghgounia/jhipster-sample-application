@@ -1,0 +1,27 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "jhipsterSampleApplicationAssetAssign": {
+      "home": {
+        "title": "Asset Assigns",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Asset Assign",
+        "createOrEditLabel": "Create or edit a Asset Assign",
+        "notFound": "No Asset Assigns found"
+      },
+      "created": "A new Asset Assign is created with identifier {{ param }}",
+      "updated": "A Asset Assign is updated with identifier {{ param }}",
+      "deleted": "A Asset Assign is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Asset Assign {{ id }}?"
+      },
+      "detail": {
+        "title": "Asset Assign"
+      },
+      "id": "ID",
+      "assetId": "Asset Id",
+      "employeeId": "Employee Id",
+      "assignDate": "Assign Date",
+      "returnDate": "Return Date"
+    }
+  }
+}

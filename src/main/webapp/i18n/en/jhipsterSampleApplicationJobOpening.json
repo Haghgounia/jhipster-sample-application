@@ -1,0 +1,30 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "jhipsterSampleApplicationJobOpening": {
+      "home": {
+        "title": "Job Openings",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Job Opening",
+        "createOrEditLabel": "Create or edit a Job Opening",
+        "notFound": "No Job Openings found"
+      },
+      "created": "A new Job Opening is created with identifier {{ param }}",
+      "updated": "A Job Opening is updated with identifier {{ param }}",
+      "deleted": "A Job Opening is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Job Opening {{ id }}?"
+      },
+      "detail": {
+        "title": "Job Opening"
+      },
+      "id": "ID",
+      "postingTitle": "Posting Title",
+      "jobStatus": "Job Status",
+      "hiringLead": "Hiring Lead",
+      "departmentId": "Department Id",
+      "employmentType": "Employment Type",
+      "minimumExperience": "Minimum Experience",
+      "jobDescription": "Job Description"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "jhipsterSampleApplicationAssetCategory": {
+      "home": {
+        "title": "Asset Categories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Asset Category",
+        "createOrEditLabel": "Create or edit a Asset Category",
+        "notFound": "No Asset Categories found"
+      },
+      "created": "A new Asset Category is created with identifier {{ param }}",
+      "updated": "A Asset Category is updated with identifier {{ param }}",
+      "deleted": "A Asset Category is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Asset Category {{ id }}?"
+      },
+      "detail": {
+        "title": "Asset Category"
+      },
+      "id": "ID",
+      "assetCategoryId": "Asset Category Id",
+      "assetCategoryName": "Asset Category Name"
+    }
+  }
+}

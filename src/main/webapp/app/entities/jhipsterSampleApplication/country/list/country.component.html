@@ -1,0 +1,175 @@
+<div>
+  <h2 id="page-heading" data-cy="CountryHeading">
+    <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.home.title">Countries</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="loadPage()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-country"
+        [routerLink]="['/jhipstersampleapplication/country/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.home.createLabel"> Create a new Country </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="countries?.length === 0">
+    <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.home.notFound">No countries found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="countries && countries.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="loadPage()">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="countryId">
+            <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryId">Country Id</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="countryName">
+            <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryName">Country Name</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="countryEnglishName">
+            <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryEnglishName"
+              >Country English Name</span
+            >
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="countryFullName">
+            <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryFullName">Country Full Name</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="countryEnglishFullName">
+            <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryEnglishFullName"
+              >Country English Full Name</span
+            >
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="countryIsoCode">
+            <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryIsoCode">Country Iso Code</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="nationality">
+            <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.nationality">Nationality</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="englishNationality">
+            <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.englishNationality">English Nationality</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="isActive">
+            <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.isActive">Is Active</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="sortOrder">
+            <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.sortOrder">Sort Order</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="continent.id">
+            <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.continent">Continent</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="currency.id">
+            <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.currency">Currency</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="officialLanguage.id">
+            <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.officialLanguage">Official Language</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let country of countries; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/jhipstersampleapplication/country', country.id, 'view']">{{ country.id }}</a>
+          </td>
+          <td>{{ country.countryId }}</td>
+          <td>{{ country.countryName }}</td>
+          <td>{{ country.countryEnglishName }}</td>
+          <td>{{ country.countryFullName }}</td>
+          <td>{{ country.countryEnglishFullName }}</td>
+          <td>{{ country.countryIsoCode }}</td>
+          <td>{{ country.nationality }}</td>
+          <td>{{ country.englishNationality }}</td>
+          <td>{{ country.isActive }}</td>
+          <td>{{ country.sortOrder }}</td>
+          <td>
+            <div *ngIf="country.continent">
+              <a [routerLink]="['/continent', country.continent?.id, 'view']">{{ country.continent?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="country.currency">
+              <a [routerLink]="['/currency', country.currency?.id, 'view']">{{ country.currency?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="country.officialLanguage">
+              <a [routerLink]="['/language', country.officialLanguage?.id, 'view']">{{ country.officialLanguage?.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/jhipstersampleapplication/country', country.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/jhipstersampleapplication/country', country.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(country)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="countries && countries.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [(page)]="ngbPaginationPage"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="loadPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

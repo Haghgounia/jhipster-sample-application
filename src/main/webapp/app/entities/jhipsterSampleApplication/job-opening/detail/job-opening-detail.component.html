@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="jobOpening">
+      <h2 data-cy="jobOpeningDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationJobOpening.detail.title">Job Opening</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ jobOpening.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationJobOpening.postingTitle">Posting Title</span></dt>
+        <dd>
+          <span>{{ jobOpening.postingTitle }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationJobOpening.jobStatus">Job Status</span></dt>
+        <dd>
+          <span>{{ jobOpening.jobStatus }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationJobOpening.hiringLead">Hiring Lead</span></dt>
+        <dd>
+          <span>{{ jobOpening.hiringLead }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationJobOpening.departmentId">Department Id</span></dt>
+        <dd>
+          <span>{{ jobOpening.departmentId }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationJobOpening.employmentType">Employment Type</span></dt>
+        <dd>
+          <span>{{ jobOpening.employmentType }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationJobOpening.minimumExperience">Minimum Experience</span>
+        </dt>
+        <dd>
+          <span>{{ jobOpening.minimumExperience }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationJobOpening.jobDescription">Job Description</span></dt>
+        <dd>
+          <span>{{ jobOpening.jobDescription }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/jhipstersampleapplication/job-opening', jobOpening.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
