@@ -1,0 +1,156 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-language-heading"
+        data-cy="LanguageCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationLanguage.home.createOrEditLabel"
+      >
+        Create or edit a Language
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationLanguage.languageId"
+            for="field_languageId"
+            >Language Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="languageId"
+            id="field_languageId"
+            data-cy="languageId"
+            formControlName="languageId"
+          />
+          <div *ngIf="editForm.get('languageId')!.invalid && (editForm.get('languageId')!.dirty || editForm.get('languageId')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('languageId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('languageId')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationLanguage.languageIsoCode"
+            for="field_languageIsoCode"
+            >Language Iso Code</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="languageIsoCode"
+            id="field_languageIsoCode"
+            data-cy="languageIsoCode"
+            formControlName="languageIsoCode"
+          />
+          <div
+            *ngIf="
+              editForm.get('languageIsoCode')!.invalid &&
+              (editForm.get('languageIsoCode')!.dirty || editForm.get('languageIsoCode')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('languageIsoCode')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationLanguage.languageName"
+            for="field_languageName"
+            >Language Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="languageName"
+            id="field_languageName"
+            data-cy="languageName"
+            formControlName="languageName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationLanguage.languageEnglishName"
+            for="field_languageEnglishName"
+            >Language English Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="languageEnglishName"
+            id="field_languageEnglishName"
+            data-cy="languageEnglishName"
+            formControlName="languageEnglishName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationLanguage.isActive"
+            for="field_isActive"
+            >Is Active</label
+          >
+          <input type="number" class="form-control" name="isActive" id="field_isActive" data-cy="isActive" formControlName="isActive" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationLanguage.sortOrder"
+            for="field_sortOrder"
+            >Sort Order</label
+          >
+          <input type="number" class="form-control" name="sortOrder" id="field_sortOrder" data-cy="sortOrder" formControlName="sortOrder" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

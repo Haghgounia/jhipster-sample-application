@@ -1,0 +1,28 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "jhipsterSampleApplicationCounty": {
+      "home": {
+        "title": "Counties",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new County",
+        "createOrEditLabel": "Create or edit a County",
+        "notFound": "No Counties found"
+      },
+      "created": "A new County is created with identifier {{ param }}",
+      "updated": "A County is updated with identifier {{ param }}",
+      "deleted": "A County is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete County {{ id }}?"
+      },
+      "detail": {
+        "title": "County"
+      },
+      "id": "ID",
+      "countyId": "County Id",
+      "countyCode": "County Code",
+      "countyName": "County Name",
+      "countyEnglishName": "County English Name",
+      "province": "Province"
+    }
+  }
+}

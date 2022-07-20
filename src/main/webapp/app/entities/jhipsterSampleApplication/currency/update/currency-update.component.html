@@ -1,0 +1,283 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-currency-heading"
+        data-cy="CurrencyCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.home.createOrEditLabel"
+      >
+        Create or edit a Currency
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.currencyId"
+            for="field_currencyId"
+            >Currency Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="currencyId"
+            id="field_currencyId"
+            data-cy="currencyId"
+            formControlName="currencyId"
+          />
+          <div *ngIf="editForm.get('currencyId')!.invalid && (editForm.get('currencyId')!.dirty || editForm.get('currencyId')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('currencyId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('currencyId')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.currencyAlphabeticIso"
+            for="field_currencyAlphabeticIso"
+            >Currency Alphabetic Iso</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="currencyAlphabeticIso"
+            id="field_currencyAlphabeticIso"
+            data-cy="currencyAlphabeticIso"
+            formControlName="currencyAlphabeticIso"
+          />
+          <div
+            *ngIf="
+              editForm.get('currencyAlphabeticIso')!.invalid &&
+              (editForm.get('currencyAlphabeticIso')!.dirty || editForm.get('currencyAlphabeticIso')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('currencyAlphabeticIso')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.currencyNumericIso"
+            for="field_currencyNumericIso"
+            >Currency Numeric Iso</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="currencyNumericIso"
+            id="field_currencyNumericIso"
+            data-cy="currencyNumericIso"
+            formControlName="currencyNumericIso"
+          />
+          <div
+            *ngIf="
+              editForm.get('currencyNumericIso')!.invalid &&
+              (editForm.get('currencyNumericIso')!.dirty || editForm.get('currencyNumericIso')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('currencyNumericIso')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.currencyName"
+            for="field_currencyName"
+            >Currency Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="currencyName"
+            id="field_currencyName"
+            data-cy="currencyName"
+            formControlName="currencyName"
+          />
+          <div
+            *ngIf="editForm.get('currencyName')!.invalid && (editForm.get('currencyName')!.dirty || editForm.get('currencyName')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('currencyName')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.currencyEnglishName"
+            for="field_currencyEnglishName"
+            >Currency English Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="currencyEnglishName"
+            id="field_currencyEnglishName"
+            data-cy="currencyEnglishName"
+            formControlName="currencyEnglishName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.currencySymbol"
+            for="field_currencySymbol"
+            >Currency Symbol</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="currencySymbol"
+            id="field_currencySymbol"
+            data-cy="currencySymbol"
+            formControlName="currencySymbol"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.floatingPoint"
+            for="field_floatingPoint"
+            >Floating Point</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="floatingPoint"
+            id="field_floatingPoint"
+            data-cy="floatingPoint"
+            formControlName="floatingPoint"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.isBaseCurrency"
+            for="field_isBaseCurrency"
+            >Is Base Currency</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="isBaseCurrency"
+            id="field_isBaseCurrency"
+            data-cy="isBaseCurrency"
+            formControlName="isBaseCurrency"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.isDefaultCurrency"
+            for="field_isDefaultCurrency"
+            >Is Default Currency</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="isDefaultCurrency"
+            id="field_isDefaultCurrency"
+            data-cy="isDefaultCurrency"
+            formControlName="isDefaultCurrency"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.conversionMethod"
+            for="field_conversionMethod"
+            >Conversion Method</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="conversionMethod"
+            id="field_conversionMethod"
+            data-cy="conversionMethod"
+            formControlName="conversionMethod"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.isActive"
+            for="field_isActive"
+            >Is Active</label
+          >
+          <input type="number" class="form-control" name="isActive" id="field_isActive" data-cy="isActive" formControlName="isActive" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.sortOrder"
+            for="field_sortOrder"
+            >Sort Order</label
+          >
+          <input type="number" class="form-control" name="sortOrder" id="field_sortOrder" data-cy="sortOrder" formControlName="sortOrder" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

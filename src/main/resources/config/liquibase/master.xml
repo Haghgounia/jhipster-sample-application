@@ -15,7 +15,32 @@
     <property name="datetimeType" value="datetime" dbms="oracle, mssql, postgresql, h2"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094626_added_entity_Continent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094627_added_entity_Country.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094628_added_entity_Currency.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094629_added_entity_Language.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094630_added_entity_Province.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094631_added_entity_County.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094632_added_entity_District.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094633_added_entity_City.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094634_added_entity_RuralDistrict.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094635_added_entity_Village.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094636_added_entity_AssetCategory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094637_added_entity_AssetStatus.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094638_added_entity_Asset.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094639_added_entity_AssetAssign.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094640_added_entity_Employee.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094641_added_entity_EmployeeContact.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094642_added_entity_JobOpening.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094643_added_entity_Candidate.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20220720094627_added_entity_constraints_Country.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094630_added_entity_constraints_Province.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094631_added_entity_constraints_County.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094632_added_entity_constraints_District.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094633_added_entity_constraints_City.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094634_added_entity_constraints_RuralDistrict.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20220720094635_added_entity_constraints_Village.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

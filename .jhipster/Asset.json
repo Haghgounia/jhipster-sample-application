@@ -1,0 +1,31 @@
+{
+  "applications": "*",
+  "changelogDate": "20220720094638",
+  "clientRootFolder": "jhipsterSampleApplication",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "asset",
+  "fields": [
+    {
+      "fieldName": "assetId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "assetSerial",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assetStatus",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "jhipsterSampleApplication",
+  "name": "Asset",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}
