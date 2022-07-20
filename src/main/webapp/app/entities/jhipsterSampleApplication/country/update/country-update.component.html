@@ -1,0 +1,287 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-country-heading"
+        data-cy="CountryCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.home.createOrEditLabel"
+      >
+        Create or edit a Country
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryId"
+            for="field_countryId"
+            >Country Id</label
+          >
+          <input type="number" class="form-control" name="countryId" id="field_countryId" data-cy="countryId" formControlName="countryId" />
+          <div *ngIf="editForm.get('countryId')!.invalid && (editForm.get('countryId')!.dirty || editForm.get('countryId')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('countryId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('countryId')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryName"
+            for="field_countryName"
+            >Country Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="countryName"
+            id="field_countryName"
+            data-cy="countryName"
+            formControlName="countryName"
+          />
+          <div *ngIf="editForm.get('countryName')!.invalid && (editForm.get('countryName')!.dirty || editForm.get('countryName')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('countryName')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryEnglishName"
+            for="field_countryEnglishName"
+            >Country English Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="countryEnglishName"
+            id="field_countryEnglishName"
+            data-cy="countryEnglishName"
+            formControlName="countryEnglishName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryFullName"
+            for="field_countryFullName"
+            >Country Full Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="countryFullName"
+            id="field_countryFullName"
+            data-cy="countryFullName"
+            formControlName="countryFullName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryEnglishFullName"
+            for="field_countryEnglishFullName"
+            >Country English Full Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="countryEnglishFullName"
+            id="field_countryEnglishFullName"
+            data-cy="countryEnglishFullName"
+            formControlName="countryEnglishFullName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryIsoCode"
+            for="field_countryIsoCode"
+            >Country Iso Code</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="countryIsoCode"
+            id="field_countryIsoCode"
+            data-cy="countryIsoCode"
+            formControlName="countryIsoCode"
+          />
+          <div
+            *ngIf="
+              editForm.get('countryIsoCode')!.invalid && (editForm.get('countryIsoCode')!.dirty || editForm.get('countryIsoCode')!.touched)
+            "
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('countryIsoCode')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.nationality"
+            for="field_nationality"
+            >Nationality</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="nationality"
+            id="field_nationality"
+            data-cy="nationality"
+            formControlName="nationality"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.englishNationality"
+            for="field_englishNationality"
+            >English Nationality</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="englishNationality"
+            id="field_englishNationality"
+            data-cy="englishNationality"
+            formControlName="englishNationality"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.isActive"
+            for="field_isActive"
+            >Is Active</label
+          >
+          <input type="number" class="form-control" name="isActive" id="field_isActive" data-cy="isActive" formControlName="isActive" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.sortOrder"
+            for="field_sortOrder"
+            >Sort Order</label
+          >
+          <input type="number" class="form-control" name="sortOrder" id="field_sortOrder" data-cy="sortOrder" formControlName="sortOrder" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.continent"
+            for="field_continent"
+            >Continent</label
+          >
+          <select class="form-control" id="field_continent" data-cy="continent" name="continent" formControlName="continent">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="continentOption.id === editForm.get('continent')!.value?.id ? editForm.get('continent')!.value : continentOption"
+              *ngFor="let continentOption of continentsSharedCollection; trackBy: trackContinentById"
+            >
+              {{ continentOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.currency"
+            for="field_currency"
+            >Currency</label
+          >
+          <select class="form-control" id="field_currency" data-cy="currency" name="currency" formControlName="currency">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="currencyOption.id === editForm.get('currency')!.value?.id ? editForm.get('currency')!.value : currencyOption"
+              *ngFor="let currencyOption of currenciesSharedCollection; trackBy: trackCurrencyById"
+            >
+              {{ currencyOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.officialLanguage"
+            for="field_officialLanguage"
+            >Official Language</label
+          >
+          <select
+            class="form-control"
+            id="field_officialLanguage"
+            data-cy="officialLanguage"
+            name="officialLanguage"
+            formControlName="officialLanguage"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                languageOption.id === editForm.get('officialLanguage')!.value?.id ? editForm.get('officialLanguage')!.value : languageOption
+              "
+              *ngFor="let languageOption of languagesSharedCollection; trackBy: trackLanguageById"
+            >
+              {{ languageOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

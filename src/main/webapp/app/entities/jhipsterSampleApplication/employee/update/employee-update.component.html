@@ -1,0 +1,146 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-employee-heading"
+        data-cy="EmployeeCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationEmployee.home.createOrEditLabel"
+      >
+        Create or edit a Employee
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationEmployee.employeeId"
+            for="field_employeeId"
+            >Employee Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="employeeId"
+            id="field_employeeId"
+            data-cy="employeeId"
+            formControlName="employeeId"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationEmployee.firstName"
+            for="field_firstName"
+            >First Name</label
+          >
+          <input type="text" class="form-control" name="firstName" id="field_firstName" data-cy="firstName" formControlName="firstName" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationEmployee.lastName"
+            for="field_lastName"
+            >Last Name</label
+          >
+          <input type="text" class="form-control" name="lastName" id="field_lastName" data-cy="lastName" formControlName="lastName" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationEmployee.gender" for="field_gender"
+            >Gender</label
+          >
+          <input type="number" class="form-control" name="gender" id="field_gender" data-cy="gender" formControlName="gender" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationEmployee.maritalStatus"
+            for="field_maritalStatus"
+            >Marital Status</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="maritalStatus"
+            id="field_maritalStatus"
+            data-cy="maritalStatus"
+            formControlName="maritalStatus"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationEmployee.birthDate"
+            for="field_birthDate"
+            >Birth Date</label
+          >
+          <input type="number" class="form-control" name="birthDate" id="field_birthDate" data-cy="birthDate" formControlName="birthDate" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationEmployee.hireDate"
+            for="field_hireDate"
+            >Hire Date</label
+          >
+          <input type="number" class="form-control" name="hireDate" id="field_hireDate" data-cy="hireDate" formControlName="hireDate" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationEmployee.employmentStatus"
+            for="field_employmentStatus"
+            >Employment Status</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="employmentStatus"
+            id="field_employmentStatus"
+            data-cy="employmentStatus"
+            formControlName="employmentStatus"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationEmployee.managerId"
+            for="field_managerId"
+            >Manager Id</label
+          >
+          <input type="number" class="form-control" name="managerId" id="field_managerId" data-cy="managerId" formControlName="managerId" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

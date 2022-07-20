@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "changelogDate": "20220720092626",
+  "clientRootFolder": "jhipsterSampleApplication",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "employee_contact",
+  "fields": [
+    {
+      "fieldName": "employeeContactId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "employeeId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "contactType",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "contact",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "jhipsterSampleApplication",
+  "name": "EmployeeContact",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,44 @@
+{
+  "applications": "*",
+  "changelogDate": "20220720092620",
+  "clientRootFolder": "jhipsterSampleApplication",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "village",
+  "fields": [
+    {
+      "fieldName": "villageId",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "villageCode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "villageName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "villageEnglishName",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "jhipsterSampleApplication",
+  "name": "Village",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "ruralDistrict",
+      "otherEntityRelationshipName": "village",
+      "relationshipName": "ruralDistrict",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

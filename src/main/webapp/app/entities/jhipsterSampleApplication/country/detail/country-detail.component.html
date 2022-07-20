@@ -1,0 +1,98 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="country">
+      <h2 data-cy="countryDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.detail.title">Country</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ country.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryId">Country Id</span></dt>
+        <dd>
+          <span>{{ country.countryId }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryName">Country Name</span></dt>
+        <dd>
+          <span>{{ country.countryName }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryEnglishName">Country English Name</span>
+        </dt>
+        <dd>
+          <span>{{ country.countryEnglishName }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryFullName">Country Full Name</span></dt>
+        <dd>
+          <span>{{ country.countryFullName }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryEnglishFullName"
+            >Country English Full Name</span
+          >
+        </dt>
+        <dd>
+          <span>{{ country.countryEnglishFullName }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.countryIsoCode">Country Iso Code</span></dt>
+        <dd>
+          <span>{{ country.countryIsoCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.nationality">Nationality</span></dt>
+        <dd>
+          <span>{{ country.nationality }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.englishNationality">English Nationality</span>
+        </dt>
+        <dd>
+          <span>{{ country.englishNationality }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.isActive">Is Active</span></dt>
+        <dd>
+          <span>{{ country.isActive }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.sortOrder">Sort Order</span></dt>
+        <dd>
+          <span>{{ country.sortOrder }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.continent">Continent</span></dt>
+        <dd>
+          <div *ngIf="country.continent">
+            <a [routerLink]="['/continent', country.continent?.id, 'view']">{{ country.continent?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.currency">Currency</span></dt>
+        <dd>
+          <div *ngIf="country.currency">
+            <a [routerLink]="['/currency', country.currency?.id, 'view']">{{ country.currency?.id }}</a>
+          </div>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCountry.officialLanguage">Official Language</span>
+        </dt>
+        <dd>
+          <div *ngIf="country.officialLanguage">
+            <a [routerLink]="['/language', country.officialLanguage?.id, 'view']">{{ country.officialLanguage?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/jhipstersampleapplication/country', country.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

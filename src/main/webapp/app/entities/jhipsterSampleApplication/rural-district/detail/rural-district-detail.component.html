@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="ruralDistrict">
+      <h2 data-cy="ruralDistrictDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationRuralDistrict.detail.title">Rural District</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ ruralDistrict.id }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationRuralDistrict.ruralDistrictId">Rural District Id</span>
+        </dt>
+        <dd>
+          <span>{{ ruralDistrict.ruralDistrictId }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationRuralDistrict.ruralDistrictCode"
+            >Rural District Code</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ruralDistrict.ruralDistrictCode }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationRuralDistrict.ruralDistrictName"
+            >Rural District Name</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ruralDistrict.ruralDistrictName }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationRuralDistrict.ruralDistrictEnglishName"
+            >Rural District English Name</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ruralDistrict.ruralDistrictEnglishName }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationRuralDistrict.district">District</span></dt>
+        <dd>
+          <div *ngIf="ruralDistrict.district">
+            <a [routerLink]="['/district', ruralDistrict.district?.id, 'view']">{{ ruralDistrict.district?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/jhipstersampleapplication/rural-district', ruralDistrict.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

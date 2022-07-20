@@ -1,0 +1,148 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-district-heading"
+        data-cy="DistrictCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationDistrict.home.createOrEditLabel"
+      >
+        Create or edit a District
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationDistrict.districtId"
+            for="field_districtId"
+            >District Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="districtId"
+            id="field_districtId"
+            data-cy="districtId"
+            formControlName="districtId"
+          />
+          <div *ngIf="editForm.get('districtId')!.invalid && (editForm.get('districtId')!.dirty || editForm.get('districtId')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('districtId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('districtId')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationDistrict.districtCode"
+            for="field_districtCode"
+            >District Code</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="districtCode"
+            id="field_districtCode"
+            data-cy="districtCode"
+            formControlName="districtCode"
+          />
+          <div
+            *ngIf="editForm.get('districtCode')!.invalid && (editForm.get('districtCode')!.dirty || editForm.get('districtCode')!.touched)"
+          >
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('districtCode')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationDistrict.districtName"
+            for="field_districtName"
+            >District Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="districtName"
+            id="field_districtName"
+            data-cy="districtName"
+            formControlName="districtName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationDistrict.districtEnglishName"
+            for="field_districtEnglishName"
+            >District English Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="districtEnglishName"
+            id="field_districtEnglishName"
+            data-cy="districtEnglishName"
+            formControlName="districtEnglishName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationDistrict.county" for="field_county"
+            >County</label
+          >
+          <select class="form-control" id="field_county" data-cy="county" name="county" formControlName="county">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="countyOption.id === editForm.get('county')!.value?.id ? editForm.get('county')!.value : countyOption"
+              *ngFor="let countyOption of countiesSharedCollection; trackBy: trackCountyById"
+            >
+              {{ countyOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

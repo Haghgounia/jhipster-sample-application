@@ -1,0 +1,152 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-village-heading"
+        data-cy="VillageCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationVillage.home.createOrEditLabel"
+      >
+        Create or edit a Village
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationVillage.villageId"
+            for="field_villageId"
+            >Village Id</label
+          >
+          <input type="number" class="form-control" name="villageId" id="field_villageId" data-cy="villageId" formControlName="villageId" />
+          <div *ngIf="editForm.get('villageId')!.invalid && (editForm.get('villageId')!.dirty || editForm.get('villageId')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('villageId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('villageId')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationVillage.villageCode"
+            for="field_villageCode"
+            >Village Code</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="villageCode"
+            id="field_villageCode"
+            data-cy="villageCode"
+            formControlName="villageCode"
+          />
+          <div *ngIf="editForm.get('villageCode')!.invalid && (editForm.get('villageCode')!.dirty || editForm.get('villageCode')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('villageCode')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationVillage.villageName"
+            for="field_villageName"
+            >Village Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="villageName"
+            id="field_villageName"
+            data-cy="villageName"
+            formControlName="villageName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationVillage.villageEnglishName"
+            for="field_villageEnglishName"
+            >Village English Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="villageEnglishName"
+            id="field_villageEnglishName"
+            data-cy="villageEnglishName"
+            formControlName="villageEnglishName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationVillage.ruralDistrict"
+            for="field_ruralDistrict"
+            >Rural District</label
+          >
+          <select
+            class="form-control"
+            id="field_ruralDistrict"
+            data-cy="ruralDistrict"
+            name="ruralDistrict"
+            formControlName="ruralDistrict"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="
+                ruralDistrictOption.id === editForm.get('ruralDistrict')!.value?.id
+                  ? editForm.get('ruralDistrict')!.value
+                  : ruralDistrictOption
+              "
+              *ngFor="let ruralDistrictOption of ruralDistrictsSharedCollection; trackBy: trackRuralDistrictById"
+            >
+              {{ ruralDistrictOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

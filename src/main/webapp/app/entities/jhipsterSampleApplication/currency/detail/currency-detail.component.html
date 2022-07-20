@@ -1,0 +1,92 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="currency">
+      <h2 data-cy="currencyDetailsHeading">
+        <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.detail.title">Currency</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ currency.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.currencyId">Currency Id</span></dt>
+        <dd>
+          <span>{{ currency.currencyId }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.currencyAlphabeticIso"
+            >Currency Alphabetic Iso</span
+          >
+        </dt>
+        <dd>
+          <span>{{ currency.currencyAlphabeticIso }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.currencyNumericIso">Currency Numeric Iso</span>
+        </dt>
+        <dd>
+          <span>{{ currency.currencyNumericIso }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.currencyName">Currency Name</span></dt>
+        <dd>
+          <span>{{ currency.currencyName }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.currencyEnglishName"
+            >Currency English Name</span
+          >
+        </dt>
+        <dd>
+          <span>{{ currency.currencyEnglishName }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.currencySymbol">Currency Symbol</span></dt>
+        <dd>
+          <span>{{ currency.currencySymbol }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.floatingPoint">Floating Point</span></dt>
+        <dd>
+          <span>{{ currency.floatingPoint }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.isBaseCurrency">Is Base Currency</span></dt>
+        <dd>
+          <span>{{ currency.isBaseCurrency }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.isDefaultCurrency">Is Default Currency</span>
+        </dt>
+        <dd>
+          <span>{{ currency.isDefaultCurrency }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.conversionMethod">Conversion Method</span>
+        </dt>
+        <dd>
+          <span>{{ currency.conversionMethod }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.isActive">Is Active</span></dt>
+        <dd>
+          <span>{{ currency.isActive }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterSampleApplicationApp.jhipsterSampleApplicationCurrency.sortOrder">Sort Order</span></dt>
+        <dd>
+          <span>{{ currency.sortOrder }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/jhipstersampleapplication/currency', currency.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

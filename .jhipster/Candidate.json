@@ -1,0 +1,31 @@
+{
+  "applications": "*",
+  "changelogDate": "20220720092628",
+  "clientRootFolder": "jhipsterSampleApplication",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "candidate",
+  "fields": [
+    {
+      "fieldName": "jobOpening",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "candidateStatus",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "candidateRating",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "jhipsterSampleApplication",
+  "name": "Candidate",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

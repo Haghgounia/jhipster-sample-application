@@ -1,0 +1,81 @@
+{
+  "applications": "*",
+  "changelogDate": "20220720092612",
+  "clientRootFolder": "jhipsterSampleApplication",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "country",
+  "fields": [
+    {
+      "fieldName": "countryId",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "countryName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "countryEnglishName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "countryFullName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "countryEnglishFullName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "countryIsoCode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "nationality",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "englishNationality",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "sortOrder",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "jhipsterSampleApplication",
+  "name": "Country",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "continent",
+      "otherEntityRelationshipName": "country",
+      "relationshipName": "continent",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "currency",
+      "otherEntityRelationshipName": "country",
+      "relationshipName": "currency",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "language",
+      "otherEntityRelationshipName": "country",
+      "relationshipName": "officialLanguage",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,36 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "jhipsterSampleApplicationCountry": {
+      "home": {
+        "title": "Countries",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Country",
+        "createOrEditLabel": "Create or edit a Country",
+        "notFound": "No Countries found"
+      },
+      "created": "A new Country is created with identifier {{ param }}",
+      "updated": "A Country is updated with identifier {{ param }}",
+      "deleted": "A Country is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Country {{ id }}?"
+      },
+      "detail": {
+        "title": "Country"
+      },
+      "id": "ID",
+      "countryId": "Country Id",
+      "countryName": "Country Name",
+      "countryEnglishName": "Country English Name",
+      "countryFullName": "Country Full Name",
+      "countryEnglishFullName": "Country English Full Name",
+      "countryIsoCode": "Country Iso Code",
+      "nationality": "Nationality",
+      "englishNationality": "English Nationality",
+      "isActive": "Is Active",
+      "sortOrder": "Sort Order",
+      "continent": "Continent",
+      "currency": "Currency",
+      "officialLanguage": "Official Language"
+    }
+  }
+}

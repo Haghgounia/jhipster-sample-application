@@ -1,0 +1,162 @@
+
+entity Continent {
+	continentId Integer required,
+	continentCode String required,
+	continentName String required,
+	continentEnglishName String
+}
+
+entity Country {
+    countryId Integer required,
+    countryName String required unique,
+    countryEnglishName String,
+    countryFullName	String,
+    countryEnglishFullName String,
+    countryIsoCode String required unique, 
+    nationality String,
+    englishNationality String,
+    isActive Integer,
+    sortOrder Integer
+}
+
+entity Currency {
+    currencyId Integer required,
+    currencyAlphabeticIso String required unique,
+    currencyNumericIso String required unique,
+    currencyName String required,
+    currencyEnglishName String,
+    currencySymbol String,
+    floatingPoint Integer,
+    isBaseCurrency Integer,
+    isDefaultCurrency Integer,
+    conversionMethod Integer,
+    isActive Integer,
+    sortOrder Integer
+}
+
+entity Language {
+    languageId Integer required,
+    languageIsoCode String required unique,
+    languageName String,
+    languageEnglishName String,
+    isActive Integer,
+    sortOrder Integer
+}
+
+entity Province {
+    provinceId Integer required,
+    provinceCode String required unique,
+    provinceName String,
+    provinceEnglishName String,
+    diallingCode String
+}
+
+entity County {
+    countyId Integer required,
+    countyCode String required unique,
+    countyName String,
+    countyEnglishName String
+}
+
+
+entity District {
+    districtId Integer required,
+    districtCode String required unique,
+    districtName String, 
+    districtEnglishName String
+}
+
+entity City {
+    cityId Integer required,
+    cityCode String required unique,
+    cityName String,
+    cityEnglishName String
+}
+
+entity RuralDistrict {
+    ruralDistrictId Integer required,
+    ruralDistrictCode String required unique,
+    ruralDistrictName String,
+    ruralDistrictEnglishName String
+}
+
+entity Village {
+    villageId Integer required, 
+    villageCode String required unique,
+    villageName String,
+    villageEnglishName String
+}
+
+entity AssetCategory{
+	assetCategoryId Integer,
+	assetCategoryName String
+}
+
+entity AssetStatus{
+	assetStatusId Integer,
+  	assetStatusName String
+}
+
+entity Asset{
+	assetId Integer,
+	assetSerial String,
+	assetStatus Integer
+}
+
+entity AssetAssign{
+	assetId Integer,
+	employeeId Integer, 
+	assignDate Integer,
+	returnDate Integer
+}
+entity Employee {
+	employeeId Integer,
+	firstName String,
+	lastName String,
+    gender Integer,
+    maritalStatus Integer,
+    birthDate Integer,
+    hireDate Integer,
+    employmentStatus Integer,
+    managerId Integer
+}
+
+entity EmployeeContact {
+	employeeContactId Integer,
+	employeeId Integer,
+    contactType Integer,
+    contact String
+}
+
+entity JobOpening {
+	postingTitle String,
+    jobStatus Integer,
+    hiringLead Integer,
+    departmentId Integer,
+    employmentType Integer,
+    minimumExperience Integer,
+    jobDescription String
+}
+entity Candidate {
+	jobOpening Integer,
+    candidateStatus Integer,
+    candidateRating Integer
+}
+
+relationship ManyToOne {
+	Country{continent} to Continent,
+	Country{currency} to Currency,
+	Country{officialLanguage} to Language,
+	Province{country} to Country,
+	County{province} to Province,
+	District{county} to County,
+	City{district} to District,
+	RuralDistrict{district} to District,
+	Village{ruralDistrict} to RuralDistrict
+}
+
+
+dto * with mapstruct
+service * with serviceImpl
+paginate * with pagination
+filter *

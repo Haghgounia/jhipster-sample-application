@@ -1,0 +1,47 @@
+{
+  "applications": "*",
+  "changelogDate": "20220720092627",
+  "clientRootFolder": "jhipsterSampleApplication",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "job_opening",
+  "fields": [
+    {
+      "fieldName": "postingTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "jobStatus",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "hiringLead",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "departmentId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "employmentType",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minimumExperience",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "jobDescription",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "jhipsterSampleApplication",
+  "name": "JobOpening",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

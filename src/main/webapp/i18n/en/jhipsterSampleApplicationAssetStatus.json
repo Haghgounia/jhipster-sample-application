@@ -1,0 +1,25 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "jhipsterSampleApplicationAssetStatus": {
+      "home": {
+        "title": "Asset Statuses",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Asset Status",
+        "createOrEditLabel": "Create or edit a Asset Status",
+        "notFound": "No Asset Statuses found"
+      },
+      "created": "A new Asset Status is created with identifier {{ param }}",
+      "updated": "A Asset Status is updated with identifier {{ param }}",
+      "deleted": "A Asset Status is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Asset Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Asset Status"
+      },
+      "id": "ID",
+      "assetStatusId": "Asset Status Id",
+      "assetStatusName": "Asset Status Name"
+    }
+  }
+}
